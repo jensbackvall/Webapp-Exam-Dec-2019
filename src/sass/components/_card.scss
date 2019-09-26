@@ -1,0 +1,74 @@
+.card {
+    position: relative;
+    height: 36rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+    @include borderBottom;
+
+    @include respond(tab-port) {
+        height: 45rem;
+    }
+
+    @include respond(phone) {
+        height: 75rem;
+    }
+
+    &__picture {
+        background-size: cover;
+        height: 100%;
+        background-blend-mode: lighten;
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-paragraph-background-light, $color-paragraph-background-dark),
+            url(./img/TeachingEachOther.jpg);
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-paragraph-background-light, $color-paragraph-background-dark),
+            url(./img/forsoeg-2.jpg);
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-paragraph-background-light, $color-paragraph-background-dark),
+            url(./img/forsoeg-3.png);
+        }
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, $color-paragraph-background-light, $color-paragraph-background-dark),
+            url(./img/forsoeg-5.jpg);
+        }
+
+    }
+
+    &__heading {
+        font-size: 3rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 0.5rem;
+        color: $color-white;
+        position: absolute;
+        top: 0;
+        left: 3.5rem;
+        width: 75%;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba($color-black, 0.5);
+
+        @include respond(tab-port) {
+            font-size: 4rem;
+        }
+
+        @include respond(phone) {
+            font-size: 5rem;
+        }
+
+        a,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $color-white;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.header {
+    height: 35vh;
+    background-image: linear-gradient(
+        to left bottom,
+        rgba($color-primary-lighter, 0.5),
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8),
+        rgba($color-primary-darker, 0.8),
+        rgba($color-primary-darkest, 1)),
+        url(./img/tiles.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    padding: 0;
+    @include borderBottom;
+    z-index: 2000;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+    border-radius: 0.2rem;
+
+
+
+    &__logo-box {
+        @include centerBottom;
+    }
+
+    &__logo {
+        animation-name: moveInFromTop;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        height: 35vh;
+    }
+
+}
