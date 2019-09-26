@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SectionAboutComponent } from './section-about/section-about.component';
 import { SectionForsoegComponent } from './section-forsoeg/section-forsoeg.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { SectionForsoegComponent } from './section-forsoeg/section-forsoeg.compo
     HeaderComponent,
     NavigationComponent,
     SectionAboutComponent,
-    SectionForsoegComponent
+    SectionForsoegComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
