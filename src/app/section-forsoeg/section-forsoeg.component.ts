@@ -7,5 +7,26 @@ import { Component } from '@angular/core';
 })
 export class SectionForsoegComponent {
 
-
+  experiments = [
+    {
+      ref: '#experiment1',
+      title: 'Teaching Each Other Lab',
+      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+    },
+    {
+      ref: '#experiment1',
+      title: 'Teaching Each Other Lab',
+      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+    },
+    {
+      ref: '#experiment1',
+      title: 'Teaching Each Other Lab',
+      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+    },
+    {
+      ref: '#experiment1',
+      title: 'Teaching Each Other Lab',
+      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+    }
+  ]
 }
