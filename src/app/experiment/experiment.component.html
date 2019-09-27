@@ -6,24 +6,30 @@
     <div class="experiment__content">
         <a href="#10forsoeg" class="experiment__close">&times;</a>
         <div class="experiment__heading u-center-text">
-            <h2 class="heading-demi u-margin-bottom-medium">
+            <h2 class="heading-demi">
                 {{ experiment.title }}
             </h2>
             <p class="heading-secondary">
                 {{ experiment.artist }} - {{ experiment.year }}
             </p>
         </div>
-        <div class="experiment__interview-video u-margin-bottom-big">
+        <div class="experiment__interview-video">
             <div class="experiment__video-container">
                 <iframe [src]="experiment.interviewvideo | safe: 'resourceUrl'" class="experiment__video-player" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="experiment__info-text u-margin-bottom-big">
+        <div class="experiment__info-text">
                 {{ experiment.infotext }}
         </div>
+        <br>
+        <br>
+        <div class="experiment__info-text u-margin-bottom-medium">
+                Credits: 
+                <br>
+                {{ experiment.credits }}
+        </div>
 
-
-        <div class="experiment__showcase-video u-margin-bottom-big">
+        <div class="experiment__showcase-video">
             <div class="experiment__video-container">
                 <iframe [src]="experiment.showcasevideo | safe: 'resourceUrl'" class="experiment__video-player" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>

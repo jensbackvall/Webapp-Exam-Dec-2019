@@ -11,12 +11,12 @@ export class SectionForsoegComponent {
     {
       ref: 'experiment1',
       title: 'Teaching Each Other Lab',
-      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+      imageurl: "url('assets/img/experiment1.jpg')"
     },
     {
       ref: 'experiment2',
-      title: 'White is the New White',
-      imageurl: "url('assets/img/TeachingEachOther.jpg')"
+      title: 'Total!Dans!',
+      imageurl: "url('assets/img/experiment2.png')"
     },
     
   ]
