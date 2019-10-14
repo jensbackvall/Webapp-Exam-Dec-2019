@@ -10,16 +10,18 @@
         <div class="grid-element" *ngFor="let forsoeg of experiments">
             <a href= '#{{ forsoeg.ref }}'>
                 <div class="card">
-                    <div class="card__picture" [ngStyle]="{ 'background-image': forsoeg.imageurl }">
+                    <div class="card__picture" [ngStyle]="{'background-image': 'url(' + forsoeg.imageurl + ')'}">
+
                         <div class="card__picture--color">
                         </div>
                     </div>
                     <h4 class="card__heading">
                         {{ forsoeg.title }}
                     </h4>
+                    <!-- <img src="{{ forsoeg.imageurl }}" alt="Experiment image"> -->
                 </div>
             </a>
-        </div>   
+        </div>
     </div>
 
 </section>

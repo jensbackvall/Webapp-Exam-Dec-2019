@@ -1,0 +1,222 @@
+<section class="add-section-experiment">
+
+<div class="addexperiment" id="nytforsoeg">
+    <div class="addexperiment__content">
+        <a href="#10forsoeg" class="addexperiment__close">&times;</a>
+
+            <form (submit)="onAddExperiment(experimentForm)" #experimentForm="ngForm" action="#10forsoeg">
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="ref"
+                        ngModel
+                        required
+                        minlength="11"
+                        placeholder="Forsoegsreference skal være 'experiment' + et tal"
+                        #ref="ngModel">
+                        <mat-error *ngIf="ref.invalid">Vær venlig at indtaste en forsoegsreference</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="title"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="Forsoegstitel"
+                        #title="ngModel">
+                        <mat-error *ngIf="title.invalid">Vær venlig at indtaste en forsoegstitel</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="imageurl"
+                        ngModel
+                        required
+                        minlength="10"
+                        placeholder="navn på forsidebilledfil inkl .jpg eller .png"
+                        #imageurl="ngModel">
+                        <mat-error *ngIf="imageurl.invalid">Vær venlig at indtaste billedenavn</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="artist"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="Kunstner"
+                        #artist="ngModel">
+                        <mat-error *ngIf="artist.invalid">Vær venlig at indtaste kunstnernavn</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="year"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="Forsoegsår"
+                        #year="ngModel">
+                        <mat-error *ngIf="year.invalid">Vær venlig at indtaste år for forsøget</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="interviewvideo"
+                        ngModel
+                        required
+                        minlength="31"
+                        placeholder="URL til interviewvideo"
+                        #interviewvideo="ngModel">
+                        <mat-error *ngIf="interviewvideo.invalid">Vær venlig at indtaste VIMEO url</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <textarea
+                        matInput
+                        rows="10"
+                        name="infotext"
+                        ngModel
+                        required
+                        placeholder="Infotext"
+                        #infotext="ngModel"></textarea>
+                        <mat-error *ngIf="infotext.invalid">Vær venlig at indtaste forsoegets infotext</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <textarea
+                        matInput
+                        rows="10"
+                        name="credits"
+                        ngModel
+                        required
+                        placeholder="Deltagere adskilt af komma"
+                        #credits="ngModel"></textarea>
+                        <mat-error *ngIf="credits.invalid">Vær venlig at indtaste forsoegets deltagere</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="showcasevideo"
+                        ngModel
+                        required
+                        minlength="31"
+                        placeholder="URL til showcasevideo"
+                        #showcasevideo="ngModel">
+                        <mat-error *ngIf="showcasevideo.invalid">Indtast VIMEO url</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="report"
+                        ngModel
+                        required
+                        minlength="31"
+                        placeholder="URL til forsoegsrapport"
+                        #report="ngModel">
+                        <mat-error *ngIf="report.invalid">Indtast gyldig url</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="telephone"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="Telefonnummer (0 = intet telefonnummer)"
+                        #telephone="ngModel">
+                        <mat-error *ngIf="telephone.invalid">Vær venlig at indtaste telefonnummer</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="email"
+                        name="contactmail"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="Kontakt email"
+                        #contactmail="ngModel">
+                        <mat-error *ngIf="contactmail.invalid">Vær venlig at indtaste gyldig email</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="website"
+                        ngModel
+                        required
+                        minlength="1"
+                        placeholder="website (format www.aaa.bbb)"
+                        #website="ngModel">
+                        <mat-error *ngIf="website.invalid">Vær venlig at indtaste hjemmeside</mat-error>
+                </mat-form-field>
+
+                <br><br>
+
+                <mat-action-row>
+                  <button class="addexperiment__button-close"
+                    mat-raised-button
+                    color="accent"
+                    type="submit">
+                    DELETE Forsoeg
+                  </button>
+                  <button class="addexperiment__button-close"
+                    mat-raised-button
+                    color="accent"
+                    type="submit">
+                    SAVE Forsoeg
+                  </button>
+                </mat-action-row>
+
+
+            </form>
+
+        </div>
+</div>
+</section>

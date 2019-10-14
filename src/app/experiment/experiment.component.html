@@ -2,8 +2,12 @@
 
 <div *ngFor="let experiment of experiments">
 
-<div class="experiment" id='{{ experiment.ref}}'>
-    <div class="experiment__content">
+<div class="experiment" id='{{experiment.ref}}'>
+
+    <div class="experiment__content" [ngStyle]="{'background-image': 'url(' + experiment.imageurl + ')'}">
+
+            <div class="experiment__content--color"></div>
+
         <a href="#10forsoeg" class="experiment__close">&times;</a>
         <div class="experiment__heading u-center-text">
             <h2 class="heading-demi">
@@ -24,7 +28,7 @@
         <br>
         <br>
         <div class="experiment__info-text u-margin-bottom-medium">
-                Credits: 
+                Credits:
                 <br>
                 {{ experiment.credits }}
         </div>

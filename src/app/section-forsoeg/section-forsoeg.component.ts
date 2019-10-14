@@ -1,32 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { SafePipe } from '../safe.pipe';
 
 import { Experiment } from '../experiment/experiment.model';
+import { ExperimentsService } from '../experiment/experiments.service';
 
 @Component({
   selector: 'app-section-forsoeg',
   templateUrl: './section-forsoeg.component.html'
   // styleUrls: ['./section-forsoeg.component.css']
 })
-export class SectionForsoegComponent {
+export class SectionForsoegComponent implements OnInit, OnDestroy {
 
-  // For later experiments: Experiment
+  experiments: Experiment[] = [];
+  private experimentsSub: Subscription;
+  constructor(public experimentsService: ExperimentsService) {}
 
-  experiments = [
-    {
-      ref: 'experiment1',
-      title: 'Teaching Each Other Lab',
-      imageurl: "url('assets/img/experiment1.jpg')"
-    },
-    {
-      ref: 'experiment2',
-      title: 'Random Performance Game',
-      imageurl: "url('assets/img/Random-kost.jpg')"
-    },
-    {
-      ref: 'experiment3',
-      title: 'Total!Dans!',
-      imageurl: "url('assets/img/experiment2.png')"
-    },
-    
-  ]
+  ngOnInit() {
+    this.experimentsService.getExperiments();
+    this.experimentsService.getExperimentsUpdateListener()
+      .subscribe((experiments: Experiment[]) => {
+        experiments.sort((expA, expB) => (expA.year > expB.year) ? -1 : 1);
+        console.log(experiments);
+        this.experiments = experiments;
+      });
+  }
+
+  ngOnDestroy() {
+    this.experimentsSub.unsubscribe();
+  }
 }
