@@ -9,7 +9,8 @@ const Experiment = require('./models/experiment');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://ExperimentStation:Scenen14@tenyearsite-yac6y.mongodb.net/nodeangular?retryWrites=true&w=majority').then(() => {
+mongoose.connect(
+'mongodb+srv://ExperimentStation:Scenen14@tenyearsite-yac6y.mongodb.net/nodeangular?retryWrites=true&w=majority').then(() => {
   console.log("Connected to database");
 }).catch(() => {
   console.log("Database connection failed");
@@ -53,8 +54,12 @@ app.post('/api/addexperiment', (req, res, next) => {
     contactmail: req.body.contactmail,
     website: req.body.website
   });
-  console.log(experiment);
-  experiment.save();
+  experiment.save().then(createdExperiment => {
+    res.status(201).json({
+      message: "New Experiment added successfully!",
+      experimentId: createdExperiment._id
+    });
+  });
   res.status(201).json({
     message: "Experiment added successfully!"
   });
@@ -73,8 +78,10 @@ app.get('/api/experiments', (req, res, next) => {
   });
 
 app.delete('/api/experiments/:id', (req, res, next) => {
-  console.log(req.params.id);
-  res.status(200).json({ message: 'Post deleted' });
+  Experiment.deleteOne({_id: req.params.id}).then(result => {
+    console.log(result);
+    res.status(200).json({ message: 'Experiment deleted' });
+  });
 });
 
 

@@ -4,10 +4,7 @@
 
 <div class="experiment" id='{{experiment.ref}}'>
 
-    <div class="experiment__content" [ngStyle]="{'background-image': 'url(' + experiment.imageurl + ')'}">
-
-            <div class="experiment__content--color"></div>
-
+    <div class="experiment__content">
         <a href="#10forsoeg" class="experiment__close">&times;</a>
         <div class="experiment__heading u-center-text">
             <h2 class="heading-demi">
@@ -38,6 +35,7 @@
                 <iframe [src]="experiment.showcasevideo | safe: 'resourceUrl'" class="experiment__video-player" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
+
         <div class="experiment__artist-info u-margin-bottom-big">
             <ul>
                 <li>Forsøgsrapport: <a href='{{ experiment.report }}'>Final Report</a></li>
@@ -46,6 +44,26 @@
                 <li>website: <a href='http://{{ experiment.website }}'>{{ experiment.website }}</a></li>
             </ul>
         </div>
+
+        <div class="experiment__edit-buttons">
+          <mat-action-row>
+            <button class="experiment__delete-button"
+              mat-raised-button
+              color="warn"
+              (click)="onDelete(experiment.id)"
+              >
+              DELETE Forsoeg
+            </button>
+            <button class="experiment__edit-button"
+              mat-raised-button
+              color="accent"
+
+              >
+              EDIT Forsoeg
+            </button>
+          </mat-action-row>
+        </div>
+
     </div>
 </div>
 </div>

@@ -54,14 +54,24 @@ export class ExperimentsService {
         // tslint:disable-next-line: max-line-length
         const exp: Experiment = { id: null, ref, title, imageurl, artist, year, interviewvideo, infotext, credits, showcasevideo, report, telephone, contactmail, website };
 
-        this.http.post<{message: string}>('http://localhost:3000/api/addexperiment', exp)
+        this.http.post<{message: string, experimentId: string}>('http://localhost:3000/api/addexperiment', exp)
       .subscribe((responseData) => {
         console.log(responseData.message);
+        const experimentId = responseData.experimentId;
+        exp.id = experimentId;
         this.experiments.push(exp);
         this.experimentsUpdated.next([...this.experiments]);
       });
-
     }
+
+  deleteExperiment(experimentId: string) {
+    this.http.delete('http://localhost:3000/api/experiments/' + experimentId)
+    .subscribe(() => {
+      const updatedExperiments = this.experiments.filter(experiment => experiment.id !== experimentId);
+      this.experiments = updatedExperiments;
+      this.experimentsUpdated.next([...this.experiments]);
+    });
+  }
 
 }
 

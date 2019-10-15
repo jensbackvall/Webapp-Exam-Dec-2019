@@ -138,4 +138,15 @@
             color: $color-primary-darkest;
         }
     }
+
+    &__edit-button {
+      right: 2rem;
+      bottom: 2rem;
+      float: right;
+    }
+
+    &__delete-button {
+      left: 2rem;
+      bottom: 2rem;
+    }
 }

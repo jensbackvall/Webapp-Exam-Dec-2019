@@ -24,6 +24,12 @@ export class ExperimentComponent implements OnInit, OnDestroy {
       });
   }
 
+
+  onDelete(experimentId: string) {
+    this.experimentsService.deleteExperiment(experimentId);
+  }
+
+
   ngOnDestroy() {
     this.experimentsSub.unsubscribe();
   }
