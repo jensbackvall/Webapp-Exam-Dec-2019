@@ -21,8 +21,9 @@ export class AddExperimentComponent {
 
         // form.resetForm();
     }
-
+/*
     onDelete(experimentId: string) {
       this.experimentsService.deleteExperiment(experimentId);
     }
+    */
 }

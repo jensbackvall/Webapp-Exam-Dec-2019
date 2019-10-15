@@ -19,6 +19,7 @@ import { SectionForsoegComponent } from './section-forsoeg/section-forsoeg.compo
 import { SafePipe } from './safe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationComponent,
     SectionAboutComponent,
     SectionForsoegComponent,
-    SafePipe
+    SafePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

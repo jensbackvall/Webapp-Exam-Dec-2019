@@ -14,12 +14,31 @@ export class ExperimentsService {
     constructor(private http: HttpClient) {}
 
     getExperiments() {
-      this.http.get<{message: string, experiments: Experiment[]}>(
+      this.http.get<{message: string, experiments: any}>(
         'http://localhost:3000/api/experiments'
         )
-        .pipe(map(experimentData))
-        .subscribe((experimentData) => {
-          this.experiments = experimentData.experiments;
+        .pipe(map((experimentData) => {
+          return experimentData.experiments.map(experiment => {
+            return {
+              id: experiment._id,
+              ref: experiment.ref,
+              title: experiment.title,
+              imageurl: experiment.imageurl,
+              artist: experiment.artist,
+              year: experiment.year,
+              interviewvideo: experiment.interviewvideo,
+              infotext: experiment.infotext,
+              credits: experiment.credits,
+              showcasevideo: experiment.showcasevideo,
+              report: experiment.report,
+              telephone: experiment.telephone,
+              contactmail: experiment.contactmail,
+              website: experiment.website
+            };
+          });
+        }))
+        .subscribe((idUpdatedExperiments) => {
+          this.experiments = idUpdatedExperiments;
           this.experimentsUpdated.next([...this.experiments]);
         });
     }

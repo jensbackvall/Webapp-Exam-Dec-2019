@@ -73,7 +73,7 @@ app.get('/api/experiments', (req, res, next) => {
   });
 
 app.delete('/api/experiments/:id', (req, res, next) => {
-  console.log(eq.params.id);
+  console.log(req.params.id);
   res.status(200).json({ message: 'Post deleted' });
 });
 
