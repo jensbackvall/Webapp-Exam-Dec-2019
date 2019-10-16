@@ -1,11 +1,58 @@
-<section class="section-about" id="forsoeg">
-    <div class="u-center-text u-margin-bottom-medium">
-        <h2 class="heading-primary">
+<section id="forsoeg">
+
+  <div class="section-about">
+
+      <div class="u-center-text u-margin-bottom-medium">
+
+          <h2 class="heading-primary">
             {{ introtext.introtitle }}
-        </h2>
+          </h2>
+
+      </div>
+
+      <div class="section-about--text u-margin-bottom-medium">
+        {{ introtext.introtext }}
+      </div>
+
+  </div>
+
+  <section class="section-forsoeg" id="10forsoeg">
+
+    <div class="u-center-text u-margin-bottom-medium">
+      <h2 class="heading-primary">
+        10 Års Forsøg
+      </h2>
     </div>
-    <div class="section-about--text u-margin-bottom-medium">
-            {{ introtext.introtext }}
+
+    <div class="row">
+
+      <div class="grid-element" *ngFor="let forsoeg of experiments">
+
+        <a href= '#{{ forsoeg.ref }}'>
+
+          <div class="card">
+
+            <div class="card__picture" [ngStyle]="{'background-image': 'url(' + forsoeg.imageurl + ')'}">
+
+              <div class="card__picture--color">
+
+              </div>
+
+            </div>
+
+            <h4 class="card__heading">
+              {{ forsoeg.title }}
+            </h4>
+
+          </div>
+
+        </a>
+
+      </div>
+
     </div>
+
+  </section>
+
 </section>
 
