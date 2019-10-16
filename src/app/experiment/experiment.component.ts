@@ -14,6 +14,13 @@ export class ExperimentComponent implements OnInit, OnDestroy {
 
   experiments: Experiment[] = [];
   private experimentsSub: Subscription;
+
+  isShow = false;
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
+
   constructor(public experimentsService: ExperimentsService) {}
 
   ngOnInit() {

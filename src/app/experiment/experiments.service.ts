@@ -47,6 +47,10 @@ export class ExperimentsService {
       return this.experimentsUpdated.asObservable();
     }
 
+    getExperiment(id: string) {
+      return {...this.experiments.find(exp => exp.id === id)};
+    }
+
     addExperiment(ref: string, title: string, imageurl: string, artist: string, year: string,
                   interviewvideo: string, infotext: string, credits: string, showcasevideo: string,
                   report: string, telephone: string, contactmail: string, website: string) {
@@ -64,12 +68,24 @@ export class ExperimentsService {
       });
     }
 
-  deleteExperiment(experimentId: string) {
-    this.http.delete('http://localhost:3000/api/experiments/' + experimentId)
-    .subscribe(() => {
-      const updatedExperiments = this.experiments.filter(experiment => experiment.id !== experimentId);
-      this.experiments = updatedExperiments;
-      this.experimentsUpdated.next([...this.experiments]);
+    updateExperiment(id: string, ref: string, title: string, imageurl: string, artist: string, year: string,
+      interviewvideo: string, infotext: string, credits: string, showcasevideo: string,
+      report: string, telephone: string, contactmail: string, website: string) {
+
+      // tslint:disable-next-line: max-line-length
+      const experiment: Experiment = { id: id, ref: ref, title: title, imageurl: imageurl, artist: artist, year: year, interviewvideo: interviewvideo, infotext: infotext, credits: credits, showcasevideo: showcasevideo, report: report, telephone: telephone, contactmail: contactmail, website: website };
+
+      this.http.put('http://localhost:3000/api/experiments/' + id, experiment)
+      .subscribe(response => console.log(response));
+
+    }
+
+    deleteExperiment(experimentId: string) {
+      this.http.delete('http://localhost:3000/api/experiments/' + experimentId)
+      .subscribe(() => {
+        const updatedExperiments = this.experiments.filter(experiment => experiment.id !== experimentId);
+        this.experiments = updatedExperiments;
+        this.experimentsUpdated.next([...this.experiments]);
     });
   }
 

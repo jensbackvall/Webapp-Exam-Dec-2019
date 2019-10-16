@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 
 app.post('/api/addexperiment', (req, res, next) => {
 
-  console.log("Inside app.addexperiment");
+  console.log("Inside addexperiment");
 
   const experiment = new Experiment({
     ref: req.body.ref,
@@ -62,6 +62,32 @@ app.post('/api/addexperiment', (req, res, next) => {
   });
   res.status(201).json({
     message: "Experiment added successfully!"
+  });
+});
+
+app.put('api/experiments/:id', (req, res, next) => {
+
+  console.log("Inside update experiment");
+
+  const experiment = new Experiment({
+    ref: req.body.ref,
+    title: req.body.title,
+    imageurl: req.body.imageurl,
+    artist: req.body.artist,
+    year: req.body.year,
+    interviewvideo: req.body.interviewvideo,
+    infotext: req.body.infotext,
+    credits: req.body.credits,
+    showcasevideo: req.body.showcasevideo,
+    report: req.body.report,
+    telephone: req.body.telephone,
+    contactmail: req.body.contactmail,
+    website: req.body.website
+  });
+
+  Experiment.updateOne({_id: req.params.id}, experiment).then(result => {
+    console.log(result);
+    res.status(200).json({message: "UPDATE SUCCESSFUL!"});
   });
 });
 

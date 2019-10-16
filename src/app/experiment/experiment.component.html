@@ -1,4 +1,4 @@
-<section class="section-experiment">
+<section class="section-experiment" *ngIf = "!isShow">
 
 <div *ngFor="let experiment of experiments">
 
@@ -54,13 +54,14 @@
               >
               DELETE Forsoeg
             </button>
-            <button class="experiment__edit-button"
+            <a class="experiment__edit-button"
               mat-raised-button
               color="accent"
-
+              [routerLink]="['/editforsoeg', experiment.id]"
+              (click) = toggleDisplay()
               >
               EDIT Forsoeg
-            </button>
+            </a>
           </mat-action-row>
         </div>
 

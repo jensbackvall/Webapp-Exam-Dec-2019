@@ -31,7 +31,9 @@ export class SectionAboutComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-      this.experimentsSub.unsubscribe();
+      if (this.experimentsSub) {
+        this.experimentsSub.unsubscribe();
+      }
     }
 
 

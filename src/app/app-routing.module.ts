@@ -6,7 +6,7 @@ import { AddExperimentComponent } from './addexperiment/addexperiment.component'
 
 const routes: Routes = [
   { path: '', component: SectionAboutComponent },
-  { path: '#nytforsoeg', component: AddExperimentComponent},
+  { path: 'addforsoeg', component: AddExperimentComponent},
   { path: 'editforsoeg/:experimentId', component: AddExperimentComponent}
 ];
 

@@ -48,6 +48,7 @@
     transition: 2s;
 
     &:hover {
+      transform: scale(1.2);
       box-shadow: 1rem 1.5rem 4rem rgba($color-black, 0.5);
       transition: 2s;
     }
