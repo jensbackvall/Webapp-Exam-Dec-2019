@@ -19,7 +19,13 @@
           <a href="#10forsoeg" class="navigation__link" onclick="closeNav()">10 Års Forsøg</a>
         </li>
         <li class="navigation__item">
-          <a href="#nytforsoeg" class="navigation__link" onclick="closeNav()">Opret Nyt Forsøg</a>
+
+          <div [routerLink]="['']" fragment="nytforsoeg" onclick="closeNav()">
+            <a href="#nytforsoeg" class="navigation__link">Opret Nyt Forsøg</a>
+          </div>
+
+          <!-- <a href="#nytforsoeg" class="navigation__link" onclick="closeNav()">Opret Nyt Forsøg</a> -->
+          <!-- <a routerLink="#nytforsoeg" routerLinkActive="router-link-active" class="navigation__link" onclick="closeNav()">Opret Nyt Forsøg</a> -->
         </li>
       </ul>
     </nav>
