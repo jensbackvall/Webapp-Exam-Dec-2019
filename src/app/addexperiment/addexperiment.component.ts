@@ -11,7 +11,7 @@ import { Experiment } from '../experiment/experiment.model';
 })
 export class AddExperimentComponent implements OnInit {
 
-    private mode = 'add';
+    private mode = 'addforsoeg';
     private experimentId: string;
     experiment: Experiment;
 
@@ -20,31 +20,57 @@ export class AddExperimentComponent implements OnInit {
     ngOnInit(): void {
       this.route.paramMap.subscribe((paramMap: ParamMap) => {
         if (paramMap.has('experimentId')) {
-          this.mode = 'edit';
+          console.log("EDITING FORSOEG!!!");
+          this.mode = 'editforsoeg';
           this.experimentId = paramMap.get('experimentId');
           this.experiment = this.experimentsService.getExperiment(this.experimentId);
         } else {
-          this.mode = 'create';
+          console.log("ADDING FORSOEG!!!");
+          this.mode = 'addforsoeg';
           this.experimentId = null;
         }
       });
-      console.log("STASRTINGSTARTINGSTARTING");
-      console.log(this.experiment);
-      console.log("DONEDONEDONE")
     }
 
 
-    onAddExperiment(form: NgForm) {
+    onSaveExperiment(form: NgForm) {
         if (form.invalid) {
             return;
         }
 
-        console.log("ADDING NEW TO DATABASE");
-        // tslint:disable-next-line: max-line-length
-        this.experimentsService.addExperiment(form.value.ref, form.value.title, 'assets/img/' + form.value.imageurl, form.value.artist, form.value.year, form.value.interviewvideo, form.value.infotext, form.value.credits, form.value.showcasevideo, form.value.report, form.value.telephone, form.value.contactmail, form.value.website);
-        console.log("ADDED :) :) !!!");
-
-        // form.resetForm();
+        if (this.mode === 'addforsoeg') {
+          this.experimentsService.addExperiment(
+            form.value.ref,
+            form.value.title,
+            'assets/img/' + form.value.imageurl,
+            form.value.artist, form.value.year,
+            form.value.interviewvideo,
+            form.value.infotext,
+            form.value.credits,
+            form.value.showcasevideo,
+            form.value.report,
+            form.value.telephone,
+            form.value.contactmail,
+            form.value.website
+            );
+        } else {
+          this.experimentsService.updateExperiment(
+            this.experimentId,
+            form.value.ref,
+            form.value.title,
+            'assets/img/' + form.value.imageurl,
+            form.value.artist, form.value.year,
+            form.value.interviewvideo,
+            form.value.infotext,
+            form.value.credits,
+            form.value.showcasevideo,
+            form.value.report,
+            form.value.telephone,
+            form.value.contactmail,
+            form.value.website
+          );
+        }
+        form.resetForm();
     }
 
 }

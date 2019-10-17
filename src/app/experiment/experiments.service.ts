@@ -56,15 +56,34 @@ export class ExperimentsService {
                   report: string, telephone: string, contactmail: string, website: string) {
 
         // tslint:disable-next-line: max-line-length
-        const exp: Experiment = { id: null, ref, title, imageurl, artist, year, interviewvideo, infotext, credits, showcasevideo, report, telephone, contactmail, website };
+        const experiment: Experiment = {
+          id: null,
+          ref: ref,
+          title: title,
+          imageurl: imageurl,
+          artist: artist,
+          year: year,
+          interviewvideo: interviewvideo,
+          infotext: infotext,
+          credits: credits,
+          showcasevideo: showcasevideo,
+          report: report,
+          telephone: telephone,
+          contactmail: contactmail,
+          website: website
+        };
 
-        this.http.post<{message: string, experimentId: string}>('http://localhost:3000/api/addexperiment', exp)
-      .subscribe((responseData) => {
-        console.log(responseData.message);
-        const experimentId = responseData.experimentId;
-        exp.id = experimentId;
-        this.experiments.push(exp);
-        this.experimentsUpdated.next([...this.experiments]);
+        this.http
+          .post<{message: string, experimentId: string}>(
+            'http://localhost:3000/api/experiments',
+            experiment
+          )
+        .subscribe((responseData) => {
+          console.log(responseData.message);
+          const experimentId = responseData.experimentId;
+          experiment.id = experimentId;
+          this.experiments.push(experiment);
+          this.experimentsUpdated.next([...this.experiments]);
       });
     }
 
@@ -73,10 +92,26 @@ export class ExperimentsService {
       report: string, telephone: string, contactmail: string, website: string) {
 
       // tslint:disable-next-line: max-line-length
-      const experiment: Experiment = { id: id, ref: ref, title: title, imageurl: imageurl, artist: artist, year: year, interviewvideo: interviewvideo, infotext: infotext, credits: credits, showcasevideo: showcasevideo, report: report, telephone: telephone, contactmail: contactmail, website: website };
+      const experiment: Experiment = {
+        id: id,
+        ref: ref,
+        title: title,
+        imageurl: imageurl,
+        artist: artist,
+        year: year,
+        interviewvideo: interviewvideo,
+        infotext: infotext,
+        credits: credits,
+        showcasevideo: showcasevideo,
+        report: report,
+        telephone: telephone,
+        contactmail: contactmail,
+        website: website
+      };
 
-      this.http.put('http://localhost:3000/api/experiments/' + id, experiment)
-      .subscribe(response => console.log(response));
+      this.http
+        .put('http://localhost:3000/api/experiments/' + id, experiment)
+        .subscribe(response => console.log(response));
 
     }
 
