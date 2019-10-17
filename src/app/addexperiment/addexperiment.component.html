@@ -6,18 +6,18 @@
             <!-- <form (submit)="onAddExperiment(experimentForm)" #experimentForm="ngForm" action="#10forsoeg"> -->
             <form (submit)="onSaveExperiment(experimentForm)" #experimentForm="ngForm">
 
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <input
                         matInput
                         type="text"
                         name="ref"
-                        [ngModel]="experiment.ref"
+                        [ngModel]="experiment?.ref"
                         required
                         minlength="11"
                         placeholder="Forsoegsreference skal være 'experiment' + et tal"
                         #ref="ngModel">
                         <mat-error *ngIf="ref.invalid">Vær venlig at indtaste en forsoegsreference</mat-error>
-                </mat-form-field>
+                </mat-form-field> -->
 
                 <br><br>
 
@@ -26,7 +26,7 @@
                         matInput
                         type="text"
                         name="title"
-                        [ngModel]="experiment.title"
+                        [ngModel]="experiment?.title"
                         required
                         minlength="1"
                         placeholder="Forsoegstitel"
@@ -41,7 +41,7 @@
                         matInput
                         type="text"
                         name="imageurl"
-                        [ngModel]="experiment.imageurl"
+                        [ngModel]="experiment?.imageurl"
                         required
                         minlength="10"
                         placeholder="navn på forsidebilledfil inkl .jpg eller .png"
@@ -56,7 +56,7 @@
                         matInput
                         type="text"
                         name="artist"
-                        [ngModel]="experiment.artist"
+                        [ngModel]="experiment?.artist"
                         required
                         minlength="1"
                         placeholder="Kunstner"
@@ -71,7 +71,7 @@
                         matInput
                         type="text"
                         name="year"
-                        [ngModel]="experiment.year"
+                        [ngModel]="experiment?.year"
                         required
                         minlength="1"
                         placeholder="Forsoegsår"
@@ -86,7 +86,7 @@
                         matInput
                         type="text"
                         name="interviewvideo"
-                        [ngModel]="experiment.interviewvideo"
+                        [ngModel]="experiment?.interviewvideo"
                         required
                         minlength="31"
                         placeholder="URL til interviewvideo"
@@ -101,7 +101,7 @@
                         matInput
                         rows="10"
                         name="infotext"
-                        [ngModel]="experiment.infotext"
+                        [ngModel]="experiment?.infotext"
                         required
                         placeholder="Infotext"
                         #infotext="ngModel"></textarea>
@@ -115,7 +115,7 @@
                         matInput
                         rows="10"
                         name="credits"
-                        [ngModel]="experiment.credits"
+                        [ngModel]="experiment?.credits"
                         required
                         placeholder="Deltagere adskilt af komma"
                         #credits="ngModel"></textarea>
@@ -129,7 +129,7 @@
                         matInput
                         type="text"
                         name="showcasevideo"
-                        [ngModel]="experiment.showcasevideo"
+                        [ngModel]="experiment?.showcasevideo"
                         required
                         minlength="31"
                         placeholder="URL til showcasevideo"
@@ -144,7 +144,7 @@
                         matInput
                         type="text"
                         name="report"
-                        [ngModel]="experiment.report"
+                        [ngModel]="experiment?.report"
                         required
                         minlength="31"
                         placeholder="URL til forsoegsrapport"
@@ -159,7 +159,7 @@
                         matInput
                         type="text"
                         name="telephone"
-                        [ngModel]="experiment.telephone"
+                        [ngModel]="experiment?.telephone"
                         required
                         minlength="1"
                         placeholder="Telefonnummer (0 = intet telefonnummer)"
@@ -174,7 +174,7 @@
                         matInput
                         type="email"
                         name="contactmail"
-                        [ngModel]="experiment.contactmail"
+                        [ngModel]="experiment?.contactmail"
                         required
                         minlength="1"
                         placeholder="Kontakt email"
@@ -189,7 +189,7 @@
                         matInput
                         type="text"
                         name="website"
-                        [ngModel]="experiment.website"
+                        [ngModel]="experiment?.website"
                         required
                         minlength="1"
                         placeholder="website (format www.aaa.bbb)"

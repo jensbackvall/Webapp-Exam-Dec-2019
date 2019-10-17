@@ -23,7 +23,14 @@ export class AddExperimentComponent implements OnInit {
           console.log("EDITING FORSOEG!!!");
           this.mode = 'editforsoeg';
           this.experimentId = paramMap.get('experimentId');
-          this.experiment = this.experimentsService.getExperiment(this.experimentId);
+          console.log("ID: ", this.experimentId);
+          this.experimentsService.getExperiment(this.experimentId).subscribe(experimentData => {
+
+            console.log(experimentData.experiment);
+
+            this.experiment = experimentData.experiment;
+
+          });
         } else {
           console.log("ADDING FORSOEG!!!");
           this.mode = 'addforsoeg';
@@ -40,10 +47,11 @@ export class AddExperimentComponent implements OnInit {
 
         if (this.mode === 'addforsoeg') {
           this.experimentsService.addExperiment(
-            form.value.ref,
+            form.value.title,
             form.value.title,
             'assets/img/' + form.value.imageurl,
-            form.value.artist, form.value.year,
+            form.value.artist,
+            form.value.year,
             form.value.interviewvideo,
             form.value.infotext,
             form.value.credits,
@@ -56,7 +64,7 @@ export class AddExperimentComponent implements OnInit {
         } else {
           this.experimentsService.updateExperiment(
             this.experimentId,
-            form.value.ref,
+            form.value.title,
             form.value.title,
             'assets/img/' + form.value.imageurl,
             form.value.artist, form.value.year,

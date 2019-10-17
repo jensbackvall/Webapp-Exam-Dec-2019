@@ -80,6 +80,18 @@ router.get('', (req, res, next) => {
   });
 
 
+router.get('/:id', (req, res, next) => {
+  Experiment.findById(req.params.id).then(experiment => {
+    if (experiment) {
+      console.log('GET GET GET GET GET');
+      console.log(experiment);
+      res.status(200).json({ experiment });
+    } else {
+      res.status(404).json({ message: "Experiment not found!!"});
+    }
+  })
+});
+
 
 router.delete('/:id', (req, res, next) => {
     Experiment.deleteOne({_id: req.params.id}).then(result => {

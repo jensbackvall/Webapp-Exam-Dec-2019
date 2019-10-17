@@ -71,7 +71,7 @@ const experiments = [
     year: '2015',
     interviewvideo: 'https://player.vimeo.com/video/362634777',
     infotext: 'Kan man udvikle et hands-on spil, der kan bruges som et strukturerings- og inspirationsværktøj i en scenekunstnerisk skabelsesproces? Livingstones Kabinet har tidligere arbejdet med tilfældighedsprincipper. Dette har vakt en interesse for at gå videre i arbejdet med ’randomisering’ i den scenekunstneriske udvikling. Med RPG prøvede vi, at udvikle et værktøj, der er specifikt gearet til scenekunst og som kan bruges til både at skabe struktur, indhold og form.',
-    credits: 'Pete Livingstone, Nina Kareis Livingstone, Svend E Kristensen, Petter Wadsten, Henrik Silver, Amia Miang, Kristine Sørensen Ougaard.',
+    credits: 'Pete Livingstone, Nina Kareis Livingstone, Svend E Kristensen, Petter Wadsten, Henrik Silver, Amia Miang, Kristine Sørensen Ougaard, Kenya Foss Parson',
     showcasevideo: 'https://player.vimeo.com/video/362634777',
     report: 'http://www.livingstoneskabinet.com/images/pdf/Teater1artikel.pdf',
     telephone: 'ikke tilgængeligt',

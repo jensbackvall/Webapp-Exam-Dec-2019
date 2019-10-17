@@ -48,7 +48,7 @@ export class ExperimentsService {
     }
 
     getExperiment(id: string) {
-      return {...this.experiments.find(exp => exp.id === id)};
+      return this.http.get<any>('http://localhost:3000/api/experiments/' + id);
     }
 
     addExperiment(ref: string, title: string, imageurl: string, artist: string, year: string,
@@ -111,7 +111,13 @@ export class ExperimentsService {
 
       this.http
         .put('http://localhost:3000/api/experiments/' + id, experiment)
-        .subscribe(response => console.log(response));
+        .subscribe(response => {
+          const updatedExperiments = [...this.experiments];
+          const oldExperimentIndex = updatedExperiments.findIndex(e => e.id === experiment.id);
+          updatedExperiments[oldExperimentIndex] = experiment;
+          this.experiments = updatedExperiments;
+          this.experimentsUpdated.next([...this.experiments]);
+        });
 
     }
 
