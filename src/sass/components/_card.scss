@@ -33,6 +33,9 @@
 
     &__heading {
         font-size: 3rem;
+        font-size: 2vw;
+        // word-break: break-all;
+        // hyphens: auto;
         font-weight: 300;
         text-transform: uppercase;
         text-align: left;

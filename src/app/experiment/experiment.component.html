@@ -29,6 +29,15 @@
                 <br>
                 {{ experiment.credits }}
         </div>
+        <br>
+        <div class="experiment__artist-info u-margin-bottom-small">
+          <ul>
+              <li>Forsøgsrapport: <a href='{{ experiment.report }}' target="_blank">Final Report</a></li>
+              <li>Telefon: {{ experiment.telephone }}</li>
+              <li>Kontakt: {{ experiment.contactmail }}</li>
+              <li>website: <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a></li>
+          </ul>
+      </div>
 
         <div class="experiment__showcase-video">
             <div class="experiment__video-container">
@@ -36,14 +45,7 @@
             </div>
         </div>
 
-        <div class="experiment__artist-info u-margin-bottom-big">
-            <ul>
-                <li>Forsøgsrapport: <a href='{{ experiment.report }}'>Final Report</a></li>
-                <li>Telephone: {{ experiment.telephone }}</li>
-                <li>Contact: {{ experiment.contactmail }}</li>
-                <li>website: <a href='http://{{ experiment.website }}'>{{ experiment.website }}</a></li>
-            </ul>
-        </div>
+
 
         <div class="experiment__edit-buttons">
           <mat-action-row>

@@ -43,7 +43,7 @@
                         name="imageurl"
                         [ngModel]="experiment?.imageurl"
                         required
-                        minlength="10"
+                        minlength="4"
                         placeholder="navn på forsidebilledfil inkl .jpg eller .png"
                         #imageurl="ngModel">
                         <mat-error *ngIf="imageurl.invalid">Vær venlig at indtaste billedenavn</mat-error>
@@ -162,7 +162,7 @@
                         [ngModel]="experiment?.telephone"
                         required
                         minlength="1"
-                        placeholder="Telefonnummer (0 = intet telefonnummer)"
+                        placeholder="Telefonnummer (hvis intet telefonnummer, skriv: ikke tilgængeligt)"
                         #telephone="ngModel">
                         <mat-error *ngIf="telephone.invalid">Vær venlig at indtaste telefonnummer</mat-error>
                 </mat-form-field>
