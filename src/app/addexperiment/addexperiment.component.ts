@@ -87,22 +87,22 @@ export class AddExperimentComponent implements OnInit {
           console.log('ID: ', this.experimentId);
           console.log('this.experiment BEFORE populating values: ', this.experiment);
           this.experimentsService.getExperiment(this.experimentId).subscribe(experimentData => {
-            console.log(experimentData.experiment);
-            this.experiment.id = experimentData.experiment._id;
-            this.experiment.ref = experimentData.experiment.ref;
-            this.experiment.question = experimentData.experiment.question;
-            this.experiment.title = experimentData.experiment.title;
-            this.experiment.imagePath = experimentData.experiment.imagePath;
-            this.experiment.artist = experimentData.experiment.artist;
-            this.experiment.year = experimentData.experiment.year;
-            this.experiment.interviewvideo = experimentData.experiment.interviewvideo;
-            this.experiment.infotext = experimentData.experiment.infotext;
-            this.experiment.credits = experimentData.experiment.credits;
-            this.experiment.showcasevideo = experimentData.experiment.showcasevideo;
-            this.experiment.report = experimentData.experiment.report;
-            this.experiment.telephone = experimentData.experiment.telephone;
-            this.experiment.contactmail = experimentData.experiment.contactmail;
-            this.experiment.website = experimentData.experiment.website;
+            // console.log(experimentData.experiment);
+            // this.experiment.id = experimentData.experiment._id;
+            // this.experiment.ref = experimentData.experiment.ref;
+            // this.experiment.question = experimentData.experiment.question;
+            // this.experiment.title = experimentData.experiment.title;
+            // this.experiment.imagePath = experimentData.experiment.imagePath;
+            // this.experiment.artist = experimentData.experiment.artist;
+            // this.experiment.year = experimentData.experiment.year;
+            // this.experiment.interviewvideo = experimentData.experiment.interviewvideo;
+            // this.experiment.infotext = experimentData.experiment.infotext;
+            // this.experiment.credits = experimentData.experiment.credits;
+            // this.experiment.showcasevideo = experimentData.experiment.showcasevideo;
+            // this.experiment.report = experimentData.experiment.report;
+            // this.experiment.telephone = experimentData.experiment.telephone;
+            // this.experiment.contactmail = experimentData.experiment.contactmail;
+            // this.experiment.website = experimentData.experiment.website;
 
             console.log('this.experiment AFTER populating values: ', this.experiment);
 

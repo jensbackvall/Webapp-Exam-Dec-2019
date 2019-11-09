@@ -5,7 +5,7 @@ import { MatInputModule,
          MatButtonModule,
          MatToolbarModule,
          MatExpansionModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +43,8 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
