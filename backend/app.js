@@ -1,11 +1,13 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 
-const Experiment = require('./models/experiment');
+const experimentsRoutes = require('./routes/experiments');
 
 const app = express();
 
@@ -18,6 +20,9 @@ mongoose.connect(
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/images', express.static(path.join('backend/images')));
+
+app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader(
@@ -26,68 +31,20 @@ app.use((req, res, next) => {
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, Authorization, X-Requested-With, Access-Control-Allow-Header, Content-Type, Accept"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, DELETE, OPTIONS"
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Credentials",
+    "true"
   );
   next();
 });
 
-app.post('/api/addexperiment', (req, res, next) => {
-
-  console.log("Inside app.addexperiment");
-
-  const experiment = new Experiment({
-    ref: req.body.ref,
-    title: req.body.title,
-    imageurl: req.body.imageurl,
-    artist: req.body.artist,
-    year: req.body.year,
-    interviewvideo: req.body.interviewvideo,
-    infotext: req.body.infotext,
-    credits: req.body.credits,
-    showcasevideo: req.body.showcasevideo,
-    report: req.body.report,
-    telephone: req.body.telephone,
-    contactmail: req.body.contactmail,
-    website: req.body.website
-  });
-  experiment.save().then(createdExperiment => {
-    res.status(201).json({
-      message: "New Experiment added successfully!",
-      experimentId: createdExperiment._id
-    });
-  });
-  res.status(201).json({
-    message: "Experiment added successfully!"
-  });
-});
-
-app.get('/api/experiments', (req, res, next) => {
-
-  console.log("Inside /api/experiments");
-
-  Experiment.find().then(fetchedDocs => {
-    console.log(fetchedDocs);
-    res.status(200).json({
-      message: "Experiments fetched successfully",
-      experiments: fetchedDocs
-    });
-  });
-
-app.delete('/api/experiments/:id', (req, res, next) => {
-  Experiment.deleteOne({_id: req.params.id}).then(result => {
-    console.log(result);
-    res.status(200).json({ message: 'Experiment deleted' });
-  });
-});
-
-
-
-});
-
+app.use('/api/experiments', experimentsRoutes);
 
 module.exports = app;
 
@@ -116,7 +73,7 @@ const experiments = [
     year: '2015',
     interviewvideo: 'https://player.vimeo.com/video/362634777',
     infotext: 'Kan man udvikle et hands-on spil, der kan bruges som et strukturerings- og inspirationsværktøj i en scenekunstnerisk skabelsesproces? Livingstones Kabinet har tidligere arbejdet med tilfældighedsprincipper. Dette har vakt en interesse for at gå videre i arbejdet med ’randomisering’ i den scenekunstneriske udvikling. Med RPG prøvede vi, at udvikle et værktøj, der er specifikt gearet til scenekunst og som kan bruges til både at skabe struktur, indhold og form.',
-    credits: 'Pete Livingstone, Nina Kareis Livingstone, Svend E Kristensen, Petter Wadsten, Henrik Silver, Amia Miang, Kristine Sørensen Ougaard.',
+    credits: 'Pete Livingstone, Nina Kareis Livingstone, Svend E Kristensen, Petter Wadsten, Henrik Silver, Amia Miang, Kristine Sørensen Ougaard, Kenya Foss Parson',
     showcasevideo: 'https://player.vimeo.com/video/362634777',
     report: 'http://www.livingstoneskabinet.com/images/pdf/Teater1artikel.pdf',
     telephone: 'ikke tilgængeligt',

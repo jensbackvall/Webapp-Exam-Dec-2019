@@ -1,4 +1,5 @@
 .navigation {
+  overflow: hidden;
 
     &__checkbox {
         display: none;
@@ -28,7 +29,7 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient($color-primary-light, $color-primary-dark); 
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 3000;
 
         transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
@@ -89,7 +90,7 @@
             }
 
         }
-        
+
         &:hover,
         &:active {
             background-position: 100%;
@@ -97,32 +98,32 @@
         }
     }
 
-    &__link-sub {
-        &:link,
-        &:visited {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 300;
-            padding: 1rem 2rem;
-            color: $color-white;
-            text-decoration: none;
-            text-transform: uppercase;
-            background-size: 250%;
-            transition: all 0.4s;
+    // &__link-sub {
+    //     &:link,
+    //     &:visited {
+    //         display: inline-block;
+    //         font-size: 2rem;
+    //         font-weight: 300;
+    //         padding: 1rem 2rem;
+    //         color: $color-white;
+    //         text-decoration: none;
+    //         text-transform: uppercase;
+    //         background-size: 250%;
+    //         transition: all 0.4s;
 
-            span {
-                margin: 1.5rem;
-                display: inline-block;
-            }
+    //         span {
+    //             margin: 1.5rem;
+    //             display: inline-block;
+    //         }
 
-        }
-        
-        &:hover,
-        &:active {
-            background-position: 100%;
-            transform: scale(2);
-        }
-    }
+    //     }
+
+    //     &:hover,
+    //     &:active {
+    //         background-position: 100%;
+    //         transform: scale(2);
+    //     }
+    // }
 
     //FUNCTIONALITY
 
@@ -176,7 +177,7 @@
     &__button:hover &__icon::before {
         top: -1rem;
     }
-    
+
     &__button:hover &__icon::after {
         top: 1rem;
     }

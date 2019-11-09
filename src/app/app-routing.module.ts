@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SectionAboutComponent } from './section-about/section-about.component';
-import { SectionForsoegComponent } from './section-forsoeg/section-forsoeg.component';
+import { AddExperimentComponent } from './addexperiment/addexperiment.component';
 
 
 const routes: Routes = [
   { path: '', component: SectionAboutComponent },
-  { path: 'forsoeg', component: SectionForsoegComponent, outlet: 'outlet1'}
+  { path: 'addforsoeg', component: AddExperimentComponent},
+  { path: 'editforsoeg/:experimentId', component: AddExperimentComponent}
 ];
 
 @NgModule({

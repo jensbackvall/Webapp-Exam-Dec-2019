@@ -1,8 +1,9 @@
 export interface Experiment {
     id: string;
     ref: string;
+    question: string;
     title: string;
-    imageurl: string;
+    imagePath: string;
     artist: string;
     year: string;
     interviewvideo: string;

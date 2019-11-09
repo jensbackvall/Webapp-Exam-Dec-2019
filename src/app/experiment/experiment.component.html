@@ -1,6 +1,6 @@
-<section class="section-experiment">
+<section class="section-experiment" *ngIf = "!isShow">
 
-<div *ngFor="let experiment of experiments">
+<ng-container *ngFor="let experiment of experiments">
 
 <div class="experiment" id='{{experiment.ref}}'>
 
@@ -19,15 +19,30 @@
                 <iframe [src]="experiment.interviewvideo | safe: 'resourceUrl'" class="experiment__video-player" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
+
         <div class="experiment__info-text">
-                {{ experiment.infotext }}
+            <i>{{ experiment.question }}</i>
+            <br><br>
+            {{ experiment.infotext }}
         </div>
         <br>
         <br>
-        <div class="experiment__info-text u-margin-bottom-medium">
-                Credits:
-                <br>
-                {{ experiment.credits }}
+
+        <div class="experiment__additional-info">
+          <div class="experiment__credits">
+              Credits:
+              <br>
+              {{ experiment.credits }}
+          </div>
+          <div class="experiment__vertical-rule"></div>
+          <div class="experiment__artist-info">
+              <ul>
+                  <li>Rapport: <a href='{{ experiment.report }}' target="_blank">{{ experiment.title }}</a></li>
+                  <li>Telefon: {{ experiment.telephone }}</li>
+                  <li>Kontakt: {{ experiment.contactmail }}</li>
+                  <li>website: <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a></li>
+              </ul>
+          </div>
         </div>
 
         <div class="experiment__showcase-video">
@@ -36,16 +51,9 @@
             </div>
         </div>
 
-        <div class="experiment__artist-info u-margin-bottom-big">
-            <ul>
-                <li>Forsøgsrapport: <a href='{{ experiment.report }}'>Final Report</a></li>
-                <li>Telephone: {{ experiment.telephone }}</li>
-                <li>Contact: {{ experiment.contactmail }}</li>
-                <li>website: <a href='http://{{ experiment.website }}'>{{ experiment.website }}</a></li>
-            </ul>
-        </div>
 
-        <div class="experiment__edit-buttons">
+
+        <!-- <div class="experiment__edit-buttons">
           <mat-action-row>
             <button class="experiment__delete-button"
               mat-raised-button
@@ -54,19 +62,20 @@
               >
               DELETE Forsoeg
             </button>
-            <button class="experiment__edit-button"
+            <a class="experiment__edit-button"
               mat-raised-button
               color="accent"
-
+              [routerLink]="['/editforsoeg', experiment.id]"
+              (click) = toggleDisplay()
               >
               EDIT Forsoeg
-            </button>
+            </a>
           </mat-action-row>
-        </div>
+        </div> -->
 
     </div>
 </div>
-</div>
+</ng-container>
 </section>
 
 
