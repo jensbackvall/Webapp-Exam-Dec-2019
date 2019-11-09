@@ -3,9 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-// Create link to Angular build directory
-const distDir = __dirname + "/dist/ten-year-anniversary-site";
-app.use(express.static(distDir));
+
 
 const mongoose = require('mongoose');
 mongoose.set('useNewUrlParser', true);
@@ -14,6 +12,10 @@ mongoose.set('useUnifiedTopology', true);
 const experimentsRoutes = require('./routes/experiments');
 
 const app = express();
+
+// Create link to Angular build directory
+const distDir = __dirname + "/dist/ten-year-anniversary-site";
+app.use(express.static(distDir));
 
 mongoose.connect(
 'mongodb+srv://ExperimentStation:Scenen14@tenyearsite-yac6y.mongodb.net/nodeangular?retryWrites=true&w=majority').then(() => {
