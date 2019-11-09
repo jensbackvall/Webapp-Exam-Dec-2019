@@ -3,8 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-
-
 const mongoose = require('mongoose');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
