@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const experimentSchema = mongoose.Schema({
   ref: { type: String, required: true },
+  question: { type: String },
   title: { type: String, required: true },
-  imageurl: { type: String, required: true },
+  imagePath: { type: String, required: true },
   artist: { type: String, required: true },
   year: { type: String, required: true },
   interviewvideo: { type: String, required: true },

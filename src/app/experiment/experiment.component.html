@@ -1,6 +1,6 @@
 <section class="section-experiment" *ngIf = "!isShow">
 
-<div *ngFor="let experiment of experiments">
+<ng-container *ngFor="let experiment of experiments">
 
 <div class="experiment" id='{{experiment.ref}}'>
 
@@ -19,25 +19,31 @@
                 <iframe [src]="experiment.interviewvideo | safe: 'resourceUrl'" class="experiment__video-player" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
+
         <div class="experiment__info-text">
-                {{ experiment.infotext }}
+            <i>{{ experiment.question }}</i>
+            <br><br>
+            {{ experiment.infotext }}
         </div>
         <br>
         <br>
-        <div class="experiment__info-text u-margin-bottom-medium">
-                Credits:
-                <br>
-                {{ experiment.credits }}
+
+        <div class="experiment__additional-info">
+          <div class="experiment__credits">
+              Credits:
+              <br>
+              {{ experiment.credits }}
+          </div>
+          <div class="experiment__vertical-rule"></div>
+          <div class="experiment__artist-info">
+              <ul>
+                  <li>Rapport: <a href='{{ experiment.report }}' target="_blank">{{ experiment.title }}</a></li>
+                  <li>Telefon: {{ experiment.telephone }}</li>
+                  <li>Kontakt: {{ experiment.contactmail }}</li>
+                  <li>website: <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a></li>
+              </ul>
+          </div>
         </div>
-        <br>
-        <div class="experiment__artist-info u-margin-bottom-small">
-          <ul>
-              <li>Forsøgsrapport: <a href='{{ experiment.report }}' target="_blank">Final Report</a></li>
-              <li>Telefon: {{ experiment.telephone }}</li>
-              <li>Kontakt: {{ experiment.contactmail }}</li>
-              <li>website: <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a></li>
-          </ul>
-      </div>
 
         <div class="experiment__showcase-video">
             <div class="experiment__video-container">
@@ -47,7 +53,7 @@
 
 
 
-        <div class="experiment__edit-buttons">
+        <!-- <div class="experiment__edit-buttons">
           <mat-action-row>
             <button class="experiment__delete-button"
               mat-raised-button
@@ -65,11 +71,11 @@
               EDIT Forsoeg
             </a>
           </mat-action-row>
-        </div>
+        </div> -->
 
     </div>
 </div>
-</div>
+</ng-container>
 </section>
 
 

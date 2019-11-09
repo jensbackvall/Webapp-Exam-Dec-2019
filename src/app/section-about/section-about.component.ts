@@ -22,10 +22,10 @@ export class SectionAboutComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
       this.experimentsService.getExperiments();
-      this.experimentsService.getExperimentsUpdateListener()
+      this.experimentsSub = this.experimentsService.getExperimentsUpdateListener()
         .subscribe((experiments: Experiment[]) => {
           experiments.sort((expA, expB) => (expA.year > expB.year) ? -1 : 1);
-          console.log(experiments);
+          // console.log(experiments);
           this.experiments = experiments;
         });
     }

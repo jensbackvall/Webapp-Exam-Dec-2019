@@ -7,7 +7,7 @@
     background-color: rgba($color-black, 0.9);
     z-index: 7000;
     overflow: auto;
-    opacity: 0;
+    //opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
 
@@ -21,7 +21,7 @@
         margin: 3rem;
         background-color: $color-primary-light;
         box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-        transform: scale(0);
+        //transform: scale(0);
         transition: all 0.2s;
 
         &--color {
@@ -77,7 +77,37 @@
         text-align: center;
     }
 
+    &__additional-info {
+      margin: 0;
+      // width: 100%;
+    }
+
+    &__credits {
+      float: left;
+      width: 45%;
+      margin-left: 7rem;
+      line-height: 3rem;
+      // padding-left: 12rem;
+      // line-height: 3rem;
+      font-size: 2rem;
+      color: $default-font-color;
+      text-align: left;
+    }
+
+    &__vertical-rule {
+      float: left;
+      margin-left: 3rem;
+      height: 20rem;
+      width: 1px;
+      background-color: $default-font-color;
+      opacity: 0.3;
+    }
+
     &__artist-info {
+      float: left;
+      width: 40%;
+      margin-left: 45%;
+      line-height: 4rem;
         & > ul {
             list-style-type: none;
             a,
@@ -91,9 +121,9 @@
                 }
             }
         }
-        margin: 4rem;
-        padding-left: 12rem;
-        line-height: 3rem;
+        margin-left: 1rem;
+        // padding-left: 12rem;
+        // line-height: 3rem;
         font-size: 2rem;
         color: $default-font-color;
         text-align: left;
@@ -109,6 +139,8 @@
         }
 
     }
+
+
 
     &:target {
         opacity: 1;
@@ -150,3 +182,5 @@
       bottom: 2rem;
     }
 }
+
+
