@@ -11,9 +11,7 @@ const experimentsRoutes = require('./routes/experiments');
 
 const app = express();
 
-// Create link to Angular build directory
-const distDir = __dirname + "/dist/ten-year-anniversary-site";
-app.use(express.static(distDir));
+
 
 mongoose.connect(
 'mongodb+srv://ExperimentStation:Scenen14@tenyearsite-yac6y.mongodb.net/nodeangular?retryWrites=true&w=majority').then(() => {
@@ -25,6 +23,7 @@ mongoose.connect(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/images', express.static(path.join('backend/images')));
+app.use('/', express.static(path.join(__dirname, 'Ten-Year-Anniversary-Site')));
 
 app.use(cors());
 
@@ -49,6 +48,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/experiments', experimentsRoutes);
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, 'Ten-Year-Anniversary-Site', 'index.html'));
+});
 
 module.exports = app;
 
