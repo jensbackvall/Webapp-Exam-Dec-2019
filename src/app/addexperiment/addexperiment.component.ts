@@ -104,6 +104,23 @@ export class AddExperimentComponent implements OnInit {
             // this.experiment.contactmail = experimentData.experiment.contactmail;
             // this.experiment.website = experimentData.experiment.website;
 
+            console.log(experimentData);
+            this.experiment.id = experimentData._id;
+            this.experiment.ref = experimentData.ref;
+            this.experiment.question = experimentData.question;
+            this.experiment.title = experimentData.title;
+            this.experiment.imagePath = experimentData.imagePath;
+            this.experiment.artist = experimentData.artist;
+            this.experiment.year = experimentData.year;
+            this.experiment.interviewvideo = experimentData.interviewvideo;
+            this.experiment.infotext = experimentData.infotext;
+            this.experiment.credits = experimentData.credits;
+            this.experiment.showcasevideo = experimentData.showcasevideo;
+            this.experiment.report = experimentData.report;
+            this.experiment.telephone = experimentData.telephone;
+            this.experiment.contactmail = experimentData.contactmail;
+            this.experiment.website = experimentData.website;
+
             console.log('this.experiment AFTER populating values: ', this.experiment);
 
             this.form.setValue({
