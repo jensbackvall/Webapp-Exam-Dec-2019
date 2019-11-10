@@ -12,14 +12,11 @@ export class ExperimentsService {
     private experiments: Experiment[] = [];
     private experimentsUpdated = new Subject<Experiment[]>();
 
-    constructor(private http: HttpClient, private router: Router) {
-      console.log(this.router.url);
-    }
+    constructor(private http: HttpClient, private router: Router) {}
 
     getExperiments() {
       this.http.get<{message: string, experiments: any}>(
-        this.router.url + '/api/experiments'
-        // 'http://localhost:3000/api/experiments'
+        'http://localhost:3000/api/experiments'
         )
         .pipe(map(experimentData => {
           return experimentData.experiments.map(experiment => {
@@ -55,7 +52,7 @@ export class ExperimentsService {
 
     getExperiment(id: string) {
       // tslint:disable-next-line: max-line-length
-      return this.http.get<{ _id: string, ref: string, question: string, title: string, imagePath: string, artist: string, year: string, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: string, contactmail: string, website: string }>(this.router.url + '/api/experiments' + id);
+      return this.http.get<{ _id: string, ref: string, question: string, title: string, imagePath: string, artist: string, year: string, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: string, contactmail: string, website: string }>('http://localhost:3000/api/experiments/' + id);
     }
 
     // tslint:disable-next-line: max-line-length
@@ -81,7 +78,7 @@ export class ExperimentsService {
 
         this.http
           .post<{message: string; experiment: Experiment}>(
-            this.router.url + '/api/experiments',
+            'http://localhost:3000/api/experiments',
             experimentData
           )
         .subscribe(responseData => {
@@ -149,7 +146,7 @@ export class ExperimentsService {
         };
       }
       this.http
-        .put(this.router.url + '/api/experiments' + id, experimentData)
+        .put('http://localhost:3000/api/experiments/' + id, experimentData)
         .subscribe(response => {
           const updatedExperiments = [...this.experiments];
           const oldExperimentIndex = updatedExperiments.findIndex(e => e.id === id);
@@ -179,7 +176,7 @@ export class ExperimentsService {
     }
 
     deleteExperiment(experimentId: string) {
-      this.http.delete(this.router.url + '/api/experiments' + experimentId)
+      this.http.delete('http://localhost:3000/api/experiments/' + experimentId)
       .subscribe(() => {
         const updatedExperiments = this.experiments.filter(experiment => experiment.id !== experimentId);
         this.experiments = updatedExperiments;
