@@ -12,7 +12,9 @@ export class ExperimentsService {
     private experiments: Experiment[] = [];
     private experimentsUpdated = new Subject<Experiment[]>();
 
-    constructor(private http: HttpClient, private router: Router) {}
+    constructor(private http: HttpClient, private router: Router) {
+      console.log(this.router.url);
+    }
 
     getExperiments() {
       this.http.get<{message: string, experiments: any}>(
