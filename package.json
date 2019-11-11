@@ -25,6 +25,8 @@
     "@angular/router": "~8.2.13",
     "@angular/cli": "~8.3.18",
     "@angular/compiler-cli": "^8.2.13",
+    "aws-sdk": "2.x",
+    "ejs": "2.x",
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.3.1",
@@ -66,4 +68,3 @@
     "npm": "6.4.x"
   }
 }
-
