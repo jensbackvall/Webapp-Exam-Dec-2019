@@ -98,33 +98,6 @@
         }
     }
 
-    // &__link-sub {
-    //     &:link,
-    //     &:visited {
-    //         display: inline-block;
-    //         font-size: 2rem;
-    //         font-weight: 300;
-    //         padding: 1rem 2rem;
-    //         color: $color-white;
-    //         text-decoration: none;
-    //         text-transform: uppercase;
-    //         background-size: 250%;
-    //         transition: all 0.4s;
-
-    //         span {
-    //             margin: 1.5rem;
-    //             display: inline-block;
-    //         }
-
-    //     }
-
-    //     &:hover,
-    //     &:active {
-    //         background-position: 100%;
-    //         transform: scale(2);
-    //     }
-    // }
-
     //FUNCTIONALITY
 
     &__checkbox:checked ~ &__nav > &__list,

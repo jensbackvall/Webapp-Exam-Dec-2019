@@ -66,6 +66,15 @@
         text-align: center;
     }
 
+    &__question {
+      width: 60%;
+      margin: auto;
+      //margin: 0 29rem;
+      font-size: 2rem;
+      color: $default-font-color;
+      text-align: center;
+    }
+
     &__info-text {
         margin: 0 7rem;
         font-size: 2rem;
@@ -87,8 +96,6 @@
       width: 45%;
       margin-left: 7rem;
       line-height: 3rem;
-      // padding-left: 12rem;
-      // line-height: 3rem;
       font-size: 2rem;
       color: $default-font-color;
       text-align: left;
@@ -96,8 +103,9 @@
 
     &__vertical-rule {
       float: left;
+      margin-top: 1rem;
       margin-left: 3rem;
-      height: 20rem;
+      height: 17rem;
       width: 1px;
       background-color: $default-font-color;
       opacity: 0.3;
@@ -105,39 +113,57 @@
 
     &__artist-info {
       float: left;
-      width: 40%;
-      margin-left: 45%;
-      line-height: 4rem;
-        & > ul {
-            list-style-type: none;
-            a,
-            &:link,
-            &:visited {
-                color: $color-white;
-                text-decoration: none;
+      width: 30%;
+      margin-top: 3rem;
+      margin-left: 8rem;
+      line-height: 3rem;
+      font-size: 2rem;
+      color: $default-font-color;
+      text-align: left;
 
-                &:hover {
-                    color: $color-primary-darkest;
-                }
-            }
-        }
-        margin-left: 1rem;
-        // padding-left: 12rem;
-        // line-height: 3rem;
-        font-size: 2rem;
-        color: $default-font-color;
-        text-align: left;
+      // top: 1rem;
+      // float: left;
+      // width: 40%;
+      // margin-left: 45%;
+      // line-height: 3rem;
+      //   & > ul {
+      //       list-style-type: none;
+      //       a,
+      //       &:link,
+      //       &:visited {
+      //           color: $color-white;
+      //           text-decoration: none;
 
-        @include respond(tab-port) {
-            margin: 1rem;
-            padding-left: 9rem;
-        }
+      //           &:hover {
+      //               color: $color-primary-darkest;
+      //           }
+      //       }
+      //   }
+      //   margin-left: 1rem;
+      //   font-size: 2rem;
+      //   color: $default-font-color;
+      //   text-align: left;
 
-        @include respond(phone) {
-            margin: 1rem;
-            padding-left: 3rem;
-        }
+      //   @include respond(tab-port) {
+      //       margin: 1rem;
+      //       padding-left: 9rem;
+      //   }
 
+      //   @include respond(phone) {
+      //       margin: 1rem;
+      //       padding-left: 3rem;
+      //   }
+
+    }
+
+    a,
+    &:link,
+    &:visited {
+      color: $color-white;
+      text-decoration: none;
+      &:hover {
+        color: $color-primary-darkest;
+      }
     }
 
 

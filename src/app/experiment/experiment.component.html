@@ -20,9 +20,11 @@
             </div>
         </div>
 
+        <div class="experiment__question">
+            <b>{{ experiment.question }}</b>
+        </div>
         <div class="experiment__info-text">
-            <i>{{ experiment.question }}</i>
-            <br><br>
+            <br>
             {{ experiment.infotext }}
         </div>
         <br>
@@ -30,18 +32,27 @@
 
         <div class="experiment__additional-info">
           <div class="experiment__credits">
+              <br>
               Credits:
               <br>
               {{ experiment.credits }}
+              <br><br>
           </div>
-          <div class="experiment__vertical-rule"></div>
+          <!-- <div class="experiment__vertical-rule"></div> -->
           <div class="experiment__artist-info">
-              <ul>
+              <a href='{{ experiment.report }}' target="_blank">Link til rapport</a>
+              <br>
+              {{ experiment.contactmail }}
+              <br>
+              <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a>
+              <br><br>
+
+              <!-- <ul>
                   <li>Rapport: <a href='{{ experiment.report }}' target="_blank">{{ experiment.title }}</a></li>
-                  <li>Telefon: {{ experiment.telephone }}</li>
+                   <li>Telefon: {{ experiment.telephone }}</li>
                   <li>Kontakt: {{ experiment.contactmail }}</li>
                   <li>website: <a href='http://{{ experiment.website }}' target="_blank">{{ experiment.website }}</a></li>
-              </ul>
+              </ul> -->
           </div>
         </div>
 
