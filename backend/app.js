@@ -14,7 +14,7 @@ const app = express();
 
 
 mongoose.connect(
-'mongodb+srv://ExperimentStation:Scenen14@tenyearsite-yac6y.mongodb.net/nodeangular?retryWrites=true&w=majority').then(() => {
+'mongodb+srv://DatabaseTester1:TestingExam1@testcluster1-wtnp1.mongodb.net/test?retryWrites=true&w=majority').then(() => {
   console.log("Connected to database");
 }).catch(() => {
   console.log("Database connection failed");
