@@ -4,13 +4,13 @@
     font-weight: 400;
     letter-spacing: 1.5rem;
     text-transform: uppercase;
-    // transition: all 0.8s;
+    transition: all 0.8s;
 
     text-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
 
-    // &:hover {
-    //     letter-spacing: 3rem;
-    // }
+    &:hover {
+      letter-spacing: 3rem;
+    }
 }
 
 .heading-demi {
@@ -19,13 +19,13 @@
     font-weight: 400;
     letter-spacing: 1.5rem;
     text-transform: uppercase;
-    // transition: all 0.8s;
+    transition: all 0.8s;
 
     text-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
 
-    // &:hover {
-    //     letter-spacing: 2rem;
-    // }
+    &:hover {
+      letter-spacing: 2rem;
+    }
 }
 
 .heading-secondary {
@@ -34,13 +34,13 @@
     font-weight: 200;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    // transition: all 0.8s;
+    transition: all 0.8s;
 
-    //text-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+    text-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
 
-    // &:hover {
-    //     letter-spacing: 1rem;
-    // }
+    &:hover {
+      letter-spacing: 1rem;
+    }
 
 }
 

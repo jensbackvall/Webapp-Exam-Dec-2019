@@ -10,8 +10,8 @@
                         matInput
                         rows="4"
                         formControlName="question"
-                        placeholder="Skriv Forsøgets spørgsmål"></textarea>
-                        <mat-error *ngIf="form.get('question').invalid">Vær venlig at skrive et spørgsmål</mat-error>
+                        placeholder="Write the QUESTION for this experiment"></textarea>
+                        <mat-error *ngIf="form.get('question').invalid">Please write a question</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -21,15 +21,15 @@
                         matInput
                         type="text"
                         formControlName="title"
-                        placeholder="Forsoegstitel">
-                        <mat-error *ngIf="form.get('title').invalid">Vær venlig at indtaste en forsoegstitel</mat-error>
+                        placeholder="Experiment Title">
+                        <mat-error *ngIf="form.get('title').invalid">Please enter a title for this experiment</mat-error>
                 </mat-form-field>
 
                 <br><br>
 
                 <div>
                   <button mat-stroked-button type="button" (click)="imagePicker.click()">
-                    Vælg Billede
+                    Choose an image
                   </button>
                   <input type="file" #imagePicker (change)="onImagePicked($event)">
                 </div>
@@ -44,8 +44,8 @@
                         matInput
                         type="text"
                         formControlName="artist"
-                        placeholder="Kunstner">
-                        <mat-error *ngIf="form.get('artist').invalid">Vær venlig at indtaste kunstnernavn</mat-error>
+                        placeholder="Artist Name">
+                        <mat-error *ngIf="form.get('artist').invalid">Please enter an artist-name</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -55,8 +55,8 @@
                         matInput
                         type="text"
                         formControlName="year"
-                        placeholder="Forsoegsår">
-                        <mat-error *ngIf="form.get('year').invalid">Vær venlig at indtaste år for forsøget</mat-error>
+                        placeholder="Year">
+                        <mat-error *ngIf="form.get('year').invalid">Please enter the year of this experiment</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -66,8 +66,8 @@
                         matInput
                         type="text"
                         formControlName="interviewvideo"
-                        placeholder="URL til interviewvideo">
-                        <mat-error *ngIf="form.get('interviewvideo').invalid">Vær venlig at indtaste VIMEO url</mat-error>
+                        placeholder="URL for Video 1">
+                        <mat-error *ngIf="form.get('interviewvideo').invalid">Please enter a VIMEO url</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -78,7 +78,7 @@
                         rows="10"
                         formControlName="infotext"
                         placeholder="Infotext"></textarea>
-                        <mat-error *ngIf="form.get('infotext').invalid">Vær venlig at indtaste forsoegets infotext</mat-error>
+                        <mat-error *ngIf="form.get('infotext').invalid">Please enter the info-text for this experiment</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -88,8 +88,8 @@
                         matInput
                         rows="10"
                         formControlName="credits"
-                        placeholder="Deltagere adskilt af komma"></textarea>
-                        <mat-error *ngIf="form.get('credits').invalid">Vær venlig at indtaste forsoegets deltagere</mat-error>
+                        placeholder="Participants separated by commas"></textarea>
+                        <mat-error *ngIf="form.get('credits').invalid">Please write the names of the participants</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -99,8 +99,8 @@
                         matInput
                         type="text"
                         formControlName="showcasevideo"
-                        placeholder="URL til showcasevideo">
-                        <mat-error *ngIf="form.get('showcasevideo').invalid">Indtast VIMEO url</mat-error>
+                        placeholder="URL for Video 2">
+                        <mat-error *ngIf="form.get('showcasevideo').invalid">Please enter a VIMEO url</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -110,8 +110,8 @@
                         matInput
                         type="text"
                         formControlName="report"
-                        placeholder="URL til forsoegsrapport">
-                        <mat-error *ngIf="form.get('report').invalid">Indtast gyldig url</mat-error>
+                        placeholder="URL for relevant information">
+                        <mat-error *ngIf="form.get('report').invalid">Enter a valid URL</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -121,8 +121,8 @@
                         matInput
                         type="text"
                         formControlName="telephone"
-                        placeholder="Telefonnummer (hvis intet telefonnummer, skriv: ikke tilgængeligt)">
-                        <mat-error *ngIf="form.get('telephone').invalid">Vær venlig at indtaste telefonnummer</mat-error>
+                        placeholder="Phone number (if no number is available, write 'N/A')">
+                        <mat-error *ngIf="form.get('telephone').invalid">Please enter a telephone number</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -132,8 +132,8 @@
                         matInput
                         type="email"
                         formControlName="contactmail"
-                        placeholder="Kontakt email">
-                        <mat-error *ngIf="form.get('contactmail').invalid">Vær venlig at indtaste gyldig email</mat-error>
+                        placeholder="Email address">
+                        <mat-error *ngIf="form.get('contactmail').invalid">Please enter a valid email</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -144,7 +144,7 @@
                         type="text"
                         formControlName="website"
                         placeholder="website (format www.aaa.bbb)">
-                        <mat-error *ngIf="form.get('website').invalid">Vær venlig at indtaste hjemmeside</mat-error>
+                        <mat-error *ngIf="form.get('website').invalid">Please enter a valid website</mat-error>
                 </mat-form-field>
 
                 <br><br>
@@ -154,7 +154,7 @@
                     mat-raised-button
                     color="accent"
                     type="submit">
-                    SAVE Forsoeg
+                    SAVE Experiment
                   </button>
                 </mat-action-row>
 
