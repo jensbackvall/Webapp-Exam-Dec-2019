@@ -4,4 +4,4 @@ This is an anniversary single page website, designed and developed for forsoegss
 
 # Development
 
-The project uses the MEAN stack, with HTML5 and SASS
+The project uses the MEAN stack, with HTML5 and SASS.
