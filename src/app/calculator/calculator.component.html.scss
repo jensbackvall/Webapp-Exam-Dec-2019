@@ -1,0 +1,48 @@
+.calculator {
+  background-color: goldenrod;
+  border-radius: 5px;
+
+  padding: 3rem;
+
+  &__display {
+    background-color: black;
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: grid;
+    grid: 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+
+    &-ac {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    &-c {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    &-percent {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+    &-division {
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+
+    &-equals {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+
+
+  }
+}
+
+
