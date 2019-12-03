@@ -36,5 +36,3 @@ module.exports = function (config) {
     restartOnFileChange: true
   });
 };
-
-// WOW. Will this work?
