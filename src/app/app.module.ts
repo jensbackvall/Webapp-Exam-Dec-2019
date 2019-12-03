@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { StorefrontComponent } from './storefront/storefront.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     SectionForsoegComponent,
     SafePipe,
     FooterComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    StorefrontComponent
   ],
   imports: [
     BrowserModule,

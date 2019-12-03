@@ -52,11 +52,11 @@ export class ExperimentsService {
 
     getExperiment(id: string) {
       // tslint:disable-next-line: max-line-length
-      return this.http.get<{ _id: string, ref: string, question: string, title: string, imagePath: string, artist: string, year: string, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: string, contactmail: string, website: string }>('http://localhost:3000/api/experiments' + id);
+      return this.http.get<{ _id: string, ref: string, question: string, title: string, imagePath: string, artist: string, year: number, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: number, contactmail: string, website: string }>('http://localhost:3000/api/experiments' + id);
     }
 
     // tslint:disable-next-line: max-line-length
-    addExperiment(ref: string, question: string, title: string, image: File, artist: string, year: string, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: string, contactmail: string, website: string) {
+    addExperiment(ref: string, question: string, title: string, image: File, artist: string, year: number, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: number, contactmail: string, website: string) {
 
         const experimentData = new FormData();
         // experimentData.append('id', null);
@@ -107,7 +107,7 @@ export class ExperimentsService {
     }
 
     // tslint:disable-next-line: max-line-length
-    updateExperiment(id: string, ref: string, question: string, title: string, image: File | string, artist: string, year: string, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: string, contactmail: string, website: string) {
+    updateExperiment(id: string, ref: string, question: string, title: string, image: File | string, artist: string, year: number, interviewvideo: string, infotext: string, credits: string, showcasevideo: string, report: string, telephone: number, contactmail: string, website: string) {
 
       let experimentData: Experiment | FormData;
       if (typeof(image) === 'object') {

@@ -70,13 +70,13 @@ export class AddExperimentComponent implements OnInit {
         title: '',
         imagePath: '',
         artist: '',
-        year: '',
+        year: 0,
         interviewvideo: '',
         infotext: '',
         credits: '',
         showcasevideo: '',
         report: '',
-        telephone: '',
+        telephone: 0,
         contactmail: '',
         website: ''
       };

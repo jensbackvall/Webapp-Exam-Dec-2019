@@ -5,13 +5,13 @@ export interface Experiment {
     title: string;
     imagePath: string;
     artist: string;
-    year: string;
+    year: number;
     interviewvideo: string;
     infotext: string;
     credits: string;
     showcasevideo: string;
     report: string;
-    telephone: string;
+    telephone: number;
     contactmail: string;
     website: string;
 }

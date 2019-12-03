@@ -24,7 +24,7 @@ export class SectionAboutComponent implements OnInit, OnDestroy {
       this.experimentsService.getExperiments();
       this.experimentsSub = this.experimentsService.getExperimentsUpdateListener()
         .subscribe((experiments: Experiment[]) => {
-          experiments.sort((expA, expB) => (expA.year.substring(expA.year.length - 4) > expB.year.substring(expB.year.length - 4)) ? -1 : 1);
+          experiments.sort((expA, expB) => (expA.year > expB.year) ? -1 : 1);
           // console.log(experiments);
           this.experiments = experiments;
         });

@@ -1,0 +1,41 @@
+<section id="storefront">
+
+  <section class="section-forsoeg" id="10forsoeg">
+
+    <div class="u-center-text u-margin-bottom-medium">
+      <h2 class="heading-primary">
+        WEBSHOP
+      </h2>
+    </div>
+
+    <div class="row">
+
+      <div class="grid-element" *ngFor="let product of Products">
+
+
+
+          <div class="card">
+
+            <div class="card__picture">
+
+              <div class="card__picture--color">
+
+              </div>
+
+            </div>
+
+            <h4 class="card__heading">
+              {{ product.cName }}
+            </h4>
+
+          </div>
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

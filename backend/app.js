@@ -9,8 +9,9 @@ mongoose.set('useUnifiedTopology', true);
 
 const experimentsRoutes = require('./routes/experiments');
 
-const app = express();
+const sqlRoutes = require('./routes/sqlroutes');
 
+const app = express();
 
 
 mongoose.connect(
@@ -48,6 +49,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/experiments', experimentsRoutes);
+
+app.use('/api/sqlserver', sqlRoutes);
+
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'Ten-Year-Anniversary-Site', 'index.html'));
 });
