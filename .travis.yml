@@ -5,6 +5,8 @@ language: node_js
 node_js:
   - 'node'
 
+// We need google chrome to simulate running in browser
+
 addons:
   apt:
     sources:
